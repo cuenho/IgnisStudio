@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('https://i.ibb.co/RcsLDxD/windows-11-dark-mode-abstract-background-black-background-3840x2160-8710.jpg') no-repeat center center;
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            overflow: hidden;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            z-index: 9999;
+        }
+
+        .loading-screen .loader {
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: 'Manrope', serif;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 0 black, -2px -2px 0 black;
+            line-height: 3.0;
+            margin-bottom: 20px;
+        }
+
+        .topo {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .baixo {
+            position: absolute;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .refrao {
+            position: absolute;
+            top: 22%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            letter-spacing: 2.0px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .button-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .button-container button {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 220px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .button-container button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #ff5733;
+            transform: scale(1.05);
+        }
+
+        .button-container button:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 87, 51, 0.7);
+        }
+
+        .image-gallery {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: 80%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .refrao {
+                font-size: 1.2rem;
+                top: 25%;
+            }
+
+            .button-container button {
+                width: 200px;
+            }
+
+            .image-gallery img {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .refrao {
+                font-size: 1rem;
+                top: 25%;
+            }
+
+            .button-container button {
+                width: 180px;
+            }
+
+            .image-gallery img {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <h1 class="topo">Contatos</h1>
+    <h1 class="baixo">Side Designer</h1>
+    <p class="refrao">Design que molda o visual,<br>Impacto que deixa marcas,<br>Criando o novo essencial.</p>
+
+    <div class="button-container">
+        <button class="botton1">Portfolio</button>
+        <button class="botton2">Instagram</button>
+        <button class="botton3">TikTok</button>
+        <button class="botton4">WhatsApp</button>
+    </div>
+
+    <p class="refrao" style="top: 70%;">Minhas Artes e Criações</p>
+
+    <div class="image-gallery">
+        <img src="https://i.postimg.cc/LXrC43HP/IMG-20241220-WA0021.jpg" alt="Imagem 1" class="gallery-img">
+        <img src="https://i.postimg.cc/Hn9wGwjd/IMG-20241220-WA0022.jpg" alt="Imagem 2" class="gallery-img">
+        <img src="https://i.postimg.cc/qMQsjx9G/IMG-20241220-WA0020.jpg" alt="Imagem 3" class="gallery-img">
+        <img src="https://i.postimg.cc/J7SNghns/IMG-20241220-WA0023-1.jpg" alt="Imagem 4" class="gallery-img">
+    </div>
+
+    <script>
+        document.querySelector('.botton1').addEventListener('click', function() {
+            window.location.href = 'https://www.behance.net/origemvisual1';
+        });
+
+        document.querySelector('.botton2').addEventListener('click', function() {
+            window.location.href = 'https://www.instagram.com/origemvisualdesign/profilecard/?igsh=MWZ2dzU4NHVnMWllZA%3D%3D';
+        });
+
+        document.querySelector('.botton3').addEventListener('click', function() {
+            window.location.href = 'https://www.tiktok.com/@lume.studios?_t=8sOrJKS0bzi&_r=1';
+        });
+
+        document.querySelector('.botton4').addEventListener('click', function() {
+            window.location.href = 'https://api.whatsapp.com/send/?phone=5588999711584&text&type=phone_number&app_absent=0&wame_ctl=1';
+        });
+
+        window.onload = function() {
+            document.body.style.opacity = 1;
+            document.querySelector('.loading-screen').style.display = 'none';
+            document.querySelector('.button-container').style.opacity = 1;
+            document.querySelector('.image-gallery').style.opacity = 1;
+        };
+    </script>
+</body>
+<footer>
+   
+</footer>
+</html>
